@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import { Heading, Grid, Flex } from '@chakra-ui/core'
+import { Input, Heading, Grid, Flex, Link, Button, Text } from '@chakra-ui/core'
+import Divider from '../components/Divider'
 
 
 export default function Home() {
@@ -7,13 +8,13 @@ export default function Home() {
     <Grid 
       as="main"
       height="100vh"
-      templateColumns="1fr 480px 1fr"
-      templateRows="1fr 400px 1fr"
+      templateColumns="1fr 480px 480px 1fr"
+      templateRows="1fr 480px 1fr"
       templateAreas="
-      '. . . .'
+      '. .    .    .' 
       '. logo form .'
-      '. . . .'
-      "
+      '. .    .    .'
+    "
       justifyContent="center"
       alignItems="center"
   >
@@ -31,8 +32,53 @@ export default function Home() {
       alignItems="stretch"
       padding={16}
       >
+          <Input
+            height="50px"
+            backgroundColor="gray.800"
+            focusBorderColor="purple.500"
+            borderRadius="sm"
+            placeholder="E-mail"
+          />
+          <Input
+            height="50px"
+            backgroundColor="gray.800"
+            focusBorderColor="purple.500"
+            borderRadius="sm"
+            placeholder="Senha"
+            marginTop={2}
+          />
+          <Link
+          alignSelf="flex-start"
+          marginTop={2}
+          fontSize="sm"
+          color="purple.600"
+          fontWeight="bold"
+          _hover={{color: 'purple.500'}}>
+              Esqueci minha senha
+          </Link>
+          <Button 
+          backgroundColor="purple.500"
+          height="50px"
+          borderRadius="sm"
+          marginTop={6}
+          _hover={{ backgroundColor: 'purple.600'}}>
+            ENTRAR
+          </Button>
 
+          <Text textAlign="center" fontSize="sm" color="gray.300" marginTop={6}>
+            Não tem uma conta? {' '}
+            <Link 
+              _hover={{ color: 'purple.500' }} 
+              color="purple.600" 
+              fontWeight="bold"
+            >
+              Registre-se
+            </Link>
+          </Text>
+          <Divider />
+          
 
     </Flex>
+  </Grid>
   )
 }
