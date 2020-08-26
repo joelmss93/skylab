@@ -34,7 +34,7 @@ export default function Home() {
       padding={16}
       >
           <Input placeholder="E-mail"/>
-          <Input placeholder="Senha" marginTop={2}/>
+          <Input type="password" placeholder="Senha" marginTop={2}/>
           <Link
           alignSelf="flex-start"
           marginTop={2}
